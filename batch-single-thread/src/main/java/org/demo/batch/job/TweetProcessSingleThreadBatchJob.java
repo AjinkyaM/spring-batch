@@ -37,9 +37,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Configuration
 @EnableBatchProcessing
-public class TweetProcessSingleThredBatchJob {
+public class TweetProcessSingleThreadBatchJob {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(TweetProcessSingleThredBatchJob.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(TweetProcessSingleThreadBatchJob.class);
 	
     @Autowired
     private JobBuilderFactory jobBuilderFactory;

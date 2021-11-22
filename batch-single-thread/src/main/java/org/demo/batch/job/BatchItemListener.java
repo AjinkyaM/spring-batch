@@ -12,7 +12,7 @@ public class BatchItemListener extends ItemListenerSupport<TweetDto, TweetDto> {
 
 	@Override
     public void onReadError(Exception ex) {
-    	//LOGGER.info("Encountered error on read", ex);
+    	LOGGER.info("encountered error on read", ex);
     }
 	
 	@Override
@@ -22,7 +22,7 @@ public class BatchItemListener extends ItemListenerSupport<TweetDto, TweetDto> {
 	
 	@Override
 	public void afterRead(TweetDto TweetDto) {
-		//LOGGER.info("afterRead Thread Name : {} ", Thread.currentThread().getName());
+		LOGGER.info("afterRead Thread Name : {} ", Thread.currentThread().getName());
 	}
 
     @Override
@@ -33,17 +33,17 @@ public class BatchItemListener extends ItemListenerSupport<TweetDto, TweetDto> {
 
 	@Override
 	public void afterWrite(List<? extends TweetDto> items) {
-		//LOGGER.info("afterWrite Thread Name : {} ", Thread.currentThread().getName());
+		LOGGER.info("afterWrite Thread Name : {} ", Thread.currentThread().getName());
 	}
 
 	@Override
 	public void beforeProcess(TweetDto item) {
-		//LOGGER.info("beforeProcess Thread Name : {} ", Thread.currentThread().getName());
+		LOGGER.info("beforeProcess Thread Name : {} ", Thread.currentThread().getName());
 	}
 
 	@Override
 	public void afterProcess(TweetDto item, TweetDto result) {
-		//LOGGER.info("afterProcess Thread Name : {} ", Thread.currentThread().getName());
+		LOGGER.info("afterProcess Thread Name : {} ", Thread.currentThread().getName());
 	}
 
 	@Override
@@ -53,6 +53,6 @@ public class BatchItemListener extends ItemListenerSupport<TweetDto, TweetDto> {
 
 	@Override
 	public void beforeRead() {
-		//LOGGER.info("beforeRead Thread Name : {} ", Thread.currentThread().getName());
+		LOGGER.info("beforeRead Thread Name : {} ", Thread.currentThread().getName());
 	}
 }

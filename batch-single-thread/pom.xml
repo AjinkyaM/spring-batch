@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.demo</groupId>
-	<artifactId>batch-single-thred</artifactId>
+	<artifactId>batch-single-thread</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>batch-single-thred</name>
-	<description>Demo project for single threded spring batch</description>
+	<name>batch-single-thread</name>
+	<description>Demo project for single thread spring batch</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

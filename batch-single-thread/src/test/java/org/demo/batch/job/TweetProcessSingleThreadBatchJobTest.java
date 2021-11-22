@@ -21,7 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBatchTest
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TweetProcessSingleThredBatchJobTest {
+public class TweetProcessSingleThreadBatchJobTest {
 	
 	@Value("${input-file-path}")
 	private String inputFilePath;
