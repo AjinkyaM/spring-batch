@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: none
+        show_sql: true
+        format_sql: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName : org.h2.Driver
+    username: sa
+    password: password
+spring.batch.initialize-schema: always
+
+input-file-path : src/test/resources/input/partitioner
+output-file-path : src/test/resources/output 
