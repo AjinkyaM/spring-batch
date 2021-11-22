@@ -12,3 +12,6 @@ spring:
     username: sa
     password: password
 spring.batch.initialize-schema: always    
+
+input-file-path : src/main/resources/input/tweet_data.json
+output-file-path : src/main/resources/output 
