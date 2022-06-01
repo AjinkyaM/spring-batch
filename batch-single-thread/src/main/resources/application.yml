@@ -1,4 +1,8 @@
 spring:
+  application:
+    name: file-process-batch
+  main:
+    banner-mode: "off"
   batch:
     initialize-schema: always
   jpa:
@@ -15,4 +19,6 @@ spring:
     password: password
     
 input-file-path : src/main/resources/input/tweet_data.json
-output-file-path : src/main/resources/output  
+output-file-path : src/main/resources/output 
+log_url: 192.168.0.105
+log_port: 24224

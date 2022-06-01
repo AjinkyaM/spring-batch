@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<include
+		resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<springProperty scope="context" name="fluentd_host"
+		source="log_url" />
+	<springProperty scope="context" name="fluentd_port"
+		source="log_port" />
+    <springProperty scope="context" name="app_name"
+		source="spring.application.name" />
+
+	<appender name="FLUENT"
+		class="ch.qos.logback.more.appenders.DataFluentAppender">
+		<!-- Check tag and label fluentd info: https://docs.fluentd.org/configuration/config-file -->
+		<tag>batch.single.thread</tag>
+		<label>normal</label>
+		<remoteHost>${fluentd_host}</remoteHost>
+		<port>${fluentd_port}</port>
+		<additionalField>
+			<key>app_name</key>
+			<value>${app_name}</value>
+		</additionalField>
+		<encoder>
+			<pattern><![CDATA[%date{HH:mm:ss.SSS} [%thread] %-5level %logger{15}#%line %message]]></pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FLUENT" />
+	</root>
+
+</configuration>
